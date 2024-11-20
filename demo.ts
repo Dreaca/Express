@@ -1,18 +1,18 @@
-class Person{
-    firstName: string,
-    age: number
-}
-const person  ={
-    firstName: 'John',
-    age: 30,
-    hobbies:{
-        sports: "football"
+class Animal {
+    constructor(feed:string, animalType:string) {
+    console.log(feed ,":", animalType);
+    
     }
 }
-console.log(person1);
+class Cat extends Animal {
+    constructor(feed:string, catType:string){
+        super(feed, catType);
+    }
+}
+class Dog extends Animal {
+    constructor(feed:string, dogType:string){
+        super(feed, dogType);
+    }
+}
 
-const {firstName, age,hobbies} = person1 // destructure the person
-const{sports} = hobbies;
-console.log(hobbies);
-console.log(sports);
-
+let cat = new Cat("Grass", "Persian");
