@@ -1,19 +1,17 @@
-// enum Size{
-//     Small = 1, //This will start with 1 otherwise it will start from 0
-//     Medium,
-//     Large
-// }
+type addType = (n1: number,n2: number)=>number;
+type subType = (n1: number,n2: number)=>number
 
-// console.log(Size.Small);
-
-const enum Size{
-    Small = 'a',
-    Medium = 'b',
-    Large ='c' 
+function substraction(n1: number,n2:number): number{
+    return n1-n2;
+}
+function add(n1: number, n2: number = 0){
+    return n1+n2;
+}
+function calculate(n1,n2, calcFn: addType|subType){
+    const result = calcFn(n1,n2);
+    console.log(result);
 }
 
-console.log(Size.Small); // will print 'a'
+console.log(calculate(10,20,add));
+console.log(calculate(10,20,substraction));
 
-const mySize: Size = Size.Small;
-
-console.log(mySize);
