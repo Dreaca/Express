@@ -1,8 +1,8 @@
-class Person{
+interface Person{
     firstName: string,
     age: number
 }
-const person  ={
+const person1  ={
     firstName: 'John',
     age: 30,
     hobbies:{
