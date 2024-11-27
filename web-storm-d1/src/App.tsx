@@ -1,17 +1,32 @@
 
 import './App.css'
-import Button from "./Button.tsx";
+import Item from './components/Item.tsx';
 
 function App() {
-    const bool : boolean = true;
+
   return (
       <>
           <div>
-              {bool?'true':'false'}
-              <Button></Button>
+            <Item {...itemsList[0]}/>
+            <Item {...itemsList[1]} />
+            <Item {...itemsList[2]} />
           </div>
       </>
   )
 }
+const itemsList = [
+    {
+        title : 'RAD',
+        desc : 'Lorem Ipsum'
+    },
+    {
+        title : "MAD",
+        desc : "Lorem Ipsum"
+    },
+    {
+        title : "SA",
+        desc : "Lorem"
+    }
+]
 
 export default App
