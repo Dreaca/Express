@@ -1,32 +1,27 @@
 
 import './App.css'
-import Item from './components/Item.tsx';
+import Dashboard from "./components/Dashboard.tsx";
+import LoginComponent from "./components/LoginComponent.tsx";
+import {ReactElement} from "react";
 
 function App() {
+    const logged_in : boolean = true;
 
+    let content :ReactElement;
+
+    if(logged_in ) {
+        content = <Dashboard/>;
+    }else {
+        content = <LoginComponent/>;
+    }
   return (
       <>
           <div>
-            <Item {...itemsList[0]}/>
-            <Item {...itemsList[1]} />
-            <Item {...itemsList[2]} />
+              {logged_in ? <Dashboard /> : <LoginComponent />}
+              {content}
           </div>
       </>
   )
 }
-const itemsList = [
-    {
-        title : 'RAD',
-        desc : 'Lorem Ipsum'
-    },
-    {
-        title : "MAD",
-        desc : "Lorem Ipsum"
-    },
-    {
-        title : "SA",
-        desc : "Lorem"
-    }
-]
 
 export default App
