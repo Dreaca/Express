@@ -1,8 +1,8 @@
 export default function ButtonComponent(props) {
-    const name = props.name;
+    // const name = props.name;
     return (
         <>
-        <button onClick={()=>{props.onClick(name)}}>{props.name}</button>
+        <button onClick={()=>{props.onClick()}}>{props.children}</button>
         </>
     )
 }
