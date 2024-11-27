@@ -1,9 +1,8 @@
-export default function ButtonComponent(props :{children:React.ReactNode}) {
+export default function ButtonComponent(props) {
+    const name = props.name;
     return (
         <>
-        <button>
-            {props.children}
-        </button>
+        <button onClick={()=>{props.onClick(name)}}>{props.name}</button>
         </>
     )
 }
