@@ -1,15 +1,14 @@
 
 import './App.css'
-import ButtonComponent from "./components/ButtonComponent.tsx";
+import Subject from "./components/Subject.tsx";
 
 function App() {
 
   return (
       <>
-          <ButtonComponent>CLICK ME!</ButtonComponent>
-          <ButtonComponent>HELLO WORLD</ButtonComponent>
-          <ButtonComponent>THIS IS A CHILD</ButtonComponent>
-          <ButtonComponent>OF BUTTON COMPONENT</ButtonComponent>
+          <Subject name = 'RAD'>loerm ipsum</Subject>
+          <Subject name = 'MAD'>loerm ipsum</Subject>
+          <Subject name = 'RAD'>loerm ipsum</Subject>
       </>
   )
 }
