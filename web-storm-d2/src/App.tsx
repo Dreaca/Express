@@ -37,8 +37,10 @@ function App() {
         setCustomers((customers: Customer[]): Customer[] =>customers.filter((customer) => customer.email !== email));
     }
     function updateByEmail(){
+        const newCusotomers = customers.map((customer: Customer) => customer.email === email?{...customer,  name:name, email:email, phone:phone}:customer);
+        setCustomers(newCusotomers)
 
-        setCustomers((customers:Customer[]) =>customers.map((customer)=>customer.email===email?new Customer(name,email,phone):customer));
+        //setCustomers((customers:Customer[]) =>customers.map((customer)=>customer.email===email?new Customer(name,email,phone):customer));
     }
     return (
         <>
@@ -50,11 +52,11 @@ function App() {
             <button onClick={handleOnChange}>Submit</button>
             <br/>}
             {{customer.firstName + " " + customer.lastName}*/}
-            <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)}/>
+            <input type="text" className='textField' placeholder="Name" onChange={(e) => setName(e.target.value)}/>
             <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)}   />
             <input type="text" placeholder="Phone" onChange={(e) => setPhone(e.target.value)}/>
             <br/>
-            <button onClick={addCustomer} key={email}>Add Customer</button>
+            <button className='button' onClick={addCustomer} key={email}>Add Customer</button>
             <button onClick={deleteCustomer}>Delete Customer</button>
             <button onClick={deleteByEmail}>Delete By Email</button>
             <button onClick={updateByEmail}>Update Customer</button>
