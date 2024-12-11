@@ -1,10 +1,10 @@
-import React from 'react';
+
 import {Link} from "react-router";
 
 const DeleteCustomer = () => {
     return (
         <div>
-            Delete Customer
+            <h1 style={{"color":"aqua"}}>Delete Customer</h1>
             <br/>
             <Link to="/">GO BACK</Link>
         </div>
