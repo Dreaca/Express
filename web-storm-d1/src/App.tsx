@@ -7,12 +7,16 @@ function App() {
 
     const [count, setCount] = useState(0);
 
-    function handleClick() {
-        setCount(count+1);
+    function handleClick(type:number) {
+        setCount(count+type);
     }
+
+
   return (
       <>
-          <ButtonComponent onClick={handleClick}>Count is {count}</ButtonComponent>
+          <h2>Count is {count}</h2>
+          <ButtonComponent onClick={handleClick} name={1}>Add +1</ButtonComponent>
+          <ButtonComponent onClick={handleClick} name={-1}>Add -1</ButtonComponent>
       </>
   )
 }
