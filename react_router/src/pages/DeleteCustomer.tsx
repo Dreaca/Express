@@ -1,30 +1,28 @@
-
-import {Link, useNavigate} from "react-router";
+import {useNavigate} from "react-router";
 import {useContext, useState} from "react";
-import {CustomerContext} from "../component/CustomerProvider.tsx";
-import {Customer} from "../Model/Customer.ts";
-export function DeleteCustomer(){
+import {CustomerContext} from "../store/CustomerProvider";
+import {Customer} from "../models/Customer.ts";
+import {Modal} from "../components/Modal";
+
+export function DeleteCustomer() {
+
     const navigate = useNavigate();
-    const [customers, setCustomers] = useContext(CustomerContext);
+    const [setCustomers] = useContext(CustomerContext);
 
-    const [name,setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    function handleSubmit(){
-        setCustomers((customers: Customer[]): Customer[] =>customers.filter((customer) => customer.email !== email));
-        navigate("/");
+    const [setName] = useState("");
+    const [setEmail] = useState("");
+    const [setPhone] = useState("");
+
+    function handleSubmit() {
+        setCustomers((customers: Customer[]) => customers.slice(0,-1));
+        navigate('/');
     }
-    return (
-        <div>
-            <h1 style={{"color": "aqua"}}>Delete Customer</h1>
-            <br/>
-            <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-            <br/>
-            <button onClick={handleSubmit}>Delete Customer</button>
-            <br/>
-            <Link to="/">GO BACK</Link>
-        </div>
-    );
-};
 
-export default DeleteCustomer;
+    return (
+        <>
+            <header><h2>Delete Customer</h2></header>
+            <br/>
+            <Modal handleSubmit={handleSubmit} setName={setName} setEmail={setEmail} setPhone={setPhone}>Delete Customer</Modal>
+        </>
+    );
+}

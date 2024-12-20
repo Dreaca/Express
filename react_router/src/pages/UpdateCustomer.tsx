@@ -1,39 +1,32 @@
-
-import {Link, useNavigate} from "react-router";
+import {useNavigate} from "react-router";
 import {useContext, useState} from "react";
-import {CustomerContext} from "../component/CustomerProvider.tsx";
-import {Customer} from "../Model/Customer.ts";
+import {CustomerContext} from "../store/CustomerProvider";
+import {Modal} from "../components/Modal";
 
 export function UpdateCustomer() {
+
     const navigate = useNavigate();
     const [customers, setCustomers] = useContext(CustomerContext);
 
-    const [name,setName] = useState("");
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
-    function handleSubmit(){
-        const newCusotomers = customers.map((customer: Customer) => customer.email === email?{...customer,  name:name, email:email, phone:phone}:customer);
-        setCustomers(newCusotomers)
-        navigate("/");
+    function handleSubmit() {
+        const updatedCustomers = customers.map((customer) =>
+            customer.email === email ?
+                {...customer, name : name, email : email, phone : phone }
+                : customer
+        );
+        setCustomers(updatedCustomers);
+        navigate('/');
     }
+
     return (
-        <div>
-            <h1 style={{"color": "aqua"}}>Update Customer</h1>
-            <div>
-                <br/>
-                <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)}/>
-                <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-                <input type="text" placeholder="Phone" onChange={(e) => setPhone(e.target.value)}/>
-                <br/>
-                <button onClick={handleSubmit}>Update Customer</button>
-
-                <Link to="/">GO BACK</Link>
-            </div>
+        <>
+            <header><h2>Update Customer</h2></header>
             <br/>
-            <Link to="/">GO BACK</Link>
-        </div>
+            <Modal handleSubmit={handleSubmit} setName={setName} setEmail={setEmail} setPhone={setPhone}>Update Customer</Modal>
+        </>
     );
-};
-
-export default UpdateCustomer;
+}

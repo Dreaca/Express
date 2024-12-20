@@ -5,8 +5,8 @@ import {Dashboard} from "./pages/Dashboard.tsx";
 import {AddCustomer} from "./pages/AddCustomer.tsx";
 import {DeleteCustomer} from "./pages/DeleteCustomer.tsx";
 import {UpdateCustomer} from "./pages/UpdateCustomer.tsx";
-import {RootLayout} from "./component/RootLayout.tsx";
-import {CustomerProvider} from "./component/CustomerProvider.tsx";
+import {RootLayout} from "./components/RootLayout.tsx";
+import {CustomerProvider} from "./store/CustomerProvider.tsx";
 
 
 function App() {
