@@ -1,15 +1,16 @@
 import {Link} from "react-router";
+import "../assets/Navigation.css";
 
 export function Navigation() {
     return (
     <>
-        <header>
-            <nav>
-                <div style={{"position": "sticky", "top": "0px","border": "1px solid white"}}>
-                    <Link to="/" style={{"margin":"1rem"}}>Home</Link>
-                    <Link to="/add" style={{"margin":"1rem"}}>Add Customer</Link>
-                    <Link to="/update" style={{"margin":"1rem"}}>Update Customer</Link>
-                    <Link to="/delete" style={{"margin":"1rem"}}>Delete Customer</Link>
+        <header className="bg-cyan-200 shadow-lg">
+            <nav className="px-4 py-3">
+                <div className="flex text-emerald-900 space-x-10 ">
+                    <Link className="custom-link" to="/">Home</Link>
+                    <Link className="custom-link" to="/add" >Add Customer</Link>
+                    <Link className="custom-link" to="/update" >Update Customer</Link>
+                    <Link className="custom-link" to="/delete" >Delete Customer</Link>
                 </div>
             </nav>
         </header>
