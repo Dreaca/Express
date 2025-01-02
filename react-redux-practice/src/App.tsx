@@ -15,10 +15,16 @@ function App() {
   return (
     <>
         <input type="text" placeholder="Customer name" onChange={(e) => setCustomerName(e.target.value)} value={customerName} />
-        <button onClick={()=>dispatch({type:"ADD_CUSTOMER",payload:customerName})}>Submit</button>
+        <button onClick={()=> {
+            dispatch({type: "ADD_CUSTOMER", payload: customerName});
+            setCustomerName("");
+        }}>Submit</button>
         <br/>
         <input type="text" placeholder="Item Name" onChange={(e) => setItemName(e.target.value)} value={itemName} />
-        <button onClick={()=>dispatch({type:"ADD_ITEM",payload:itemName})}>Submit</button>
+        <button onClick={()=> {
+            dispatch({type: "ADD_ITEM", payload: itemName});
+            setItemName("")
+        }}>Submit</button>
         <br/>
         {customer}
         <br/>
