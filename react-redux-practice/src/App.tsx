@@ -1,20 +1,28 @@
 
 import './App.css'
 import {useDispatch, useSelector} from "react-redux";
+import {useState} from "react";
 
 function App() {
-    const count = useSelector(state=>state.count)
+    // const count = useSelector(state=>state.count)
+    const customer = useSelector(state => state.customer)
+    const item = useSelector(state => state.item)
     const dispatch = useDispatch();
-    const visible = useSelector(state=>state.visibility)
+
+    const [customerName, setCustomerName] = useState<string>();
+    const [itemName, setItemName] = useState<string>();
+    // const visible = useSelector(state=>state.visibility)
   return (
     <>
-        <div>
-            {visible && count}
-        </div>
+        <input type="text" placeholder="Customer name" onChange={(e) => setCustomerName(e.target.value)} value={customerName} />
+        <button onClick={()=>dispatch({type:"ADD_CUSTOMER",payload:customerName})}>Submit</button>
         <br/>
-      <button onClick={()=>dispatch({type:"ADD_COUNTER"})}>Increment</button>
-      <button onClick={()=>dispatch({type:"REMOVE_COUNT"})}>Decrement</button>
-        <button onClick={()=>dispatch({type:"HIDE"})}>Toggle</button>
+        <input type="text" placeholder="Item Name" onChange={(e) => setItemName(e.target.value)} value={itemName} />
+        <button onClick={()=>dispatch({type:"ADD_ITEM",payload:itemName})}>Submit</button>
+        <br/>
+        {customer}
+        <br/>
+        {item}
     </>
   )
 }

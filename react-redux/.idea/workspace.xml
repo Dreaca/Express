@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="909863fe-e7ac-4275-926f-31d5c4752c40" name="Changes" comment="react redux">
+      <change afterPath="$PROJECT_DIR$/../react-redux-practice/src/reducers/CustomerReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../react-redux-practice/src/reducers/ItemReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-redux-practice/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-redux-practice/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-redux-practice/src/reducers/CountReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../react-redux-practice/src/reducers/CountReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-redux-practice/src/store/Store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../react-redux-practice/src/store/Store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1735790390903</updated>
-      <workItem from="1735790392216" duration="4254000" />
+      <workItem from="1735790392216" duration="5870000" />
     </task>
     <task id="LOCAL-00001" summary="react redux">
       <option name="closed" value="true" />
@@ -122,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735792173311</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="react redux">
+      <option name="closed" value="true" />
+      <created>1735794722919</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1735794722919</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
