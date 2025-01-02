@@ -9,8 +9,8 @@ function App() {
     <>
         {count}
         <br/>
-      <button>Increment</button>
-      <button>Decrement</button>
+      <button onClick={()=>dispatch({type:"ADD_COUNTER"})}>Increment</button>
+      <button onClick={()=>dispatch({type:"REMOVE_COUNT"})}>Decrement</button>
     </>
   )
 }
