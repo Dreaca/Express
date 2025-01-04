@@ -11,12 +11,17 @@ const CustomerSlice = createSlice({
         addCustomer (state, action){
             state.customers.push(action.payload)
         },
-        deleteCustomer (state, action){
-            state.customers.splice(state.customers.indexOf(action.payload), 1)
+        deleteCustomer (state,action){
+            const index = state.customers.findIndex((customer:Customer) => customer.email === action.payload.email);
+            if (index !== -1) {
+                state.customers.splice(index, 1);
+            }
         },
         updateCustomer (state, action){
-            state.customers.map((customer:Customer) =>customer.email === action.payload.email?
-            state.customers.push(action.payload):customer)
+            const index = state.customers.findIndex((customer:Customer) => customer.email === action.payload.email);
+            if (index !== -1) {
+                state.customers[index] = action.payload;
+            }
         }
     }
 })

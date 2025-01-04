@@ -3,6 +3,6 @@ import CustomerSlice from "../reducer/CustomerSlice.ts";
 
 export const store = configureStore({
     reducer: {
-        name:CustomerSlice
+        customer : CustomerSlice
     }
 })

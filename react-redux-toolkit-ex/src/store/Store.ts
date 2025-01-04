@@ -3,7 +3,7 @@ import NameSlice from "../reducer/NameSlice.ts";
 
 export const store = configureStore({
     reducer: {
-        name : NameSlice
+        test : NameSlice
     }
     }
 )

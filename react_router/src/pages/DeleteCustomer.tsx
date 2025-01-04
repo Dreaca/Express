@@ -1,20 +1,24 @@
 import {useNavigate} from "react-router";
-import {useContext, useState} from "react";
-import {CustomerContext} from "../store/CustomerProvider";
-import {Customer} from "../models/Customer.ts";
+import {useState} from "react";
+
 import {Modal} from "../components/Modal";
+import {useDispatch} from "react-redux";
+import {deleteCustomer} from "../reducer/CustomerSlice.ts";
+import {Customer} from "../models/Customer.ts";
 
 export function DeleteCustomer() {
 
     const navigate = useNavigate();
-    const [setCustomers] = useContext(CustomerContext);
+    const dispatch = useDispatch();
 
-    const [setName] = useState("");
-    const [setEmail] = useState("");
-    const [setPhone] = useState("");
+    const [name,setName] = useState("");
+    const [email,setEmail] = useState("");
+    const [phone,setPhone] = useState("");
 
     function handleSubmit() {
-        setCustomers((customers: Customer[]) => customers.slice(0,-1));
+        // setCustomers((customers: Customer[]) => customers.slice(0,-1));
+       const del = new Customer(name,email,phone)
+        dispatch(deleteCustomer(del));
         navigate('/');
     }
 

@@ -1,24 +1,23 @@
 import {useNavigate} from "react-router";
-import {useContext, useState} from "react";
-import {CustomerContext} from "../store/CustomerProvider";
+import {useState} from "react";
+
 import {Modal} from "../components/Modal";
+import {useDispatch} from "react-redux";
+import {Customer} from "../models/Customer.ts";
+import {updateCustomer} from "../reducer/CustomerSlice.ts";
 
 export function UpdateCustomer() {
 
     const navigate = useNavigate();
-    const [customers, setCustomers] = useContext(CustomerContext);
+    const dispatch = useDispatch();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
     function handleSubmit() {
-        const updatedCustomers = customers.map((customer) =>
-            customer.email === email ?
-                {...customer, name : name, email : email, phone : phone }
-                : customer
-        );
-        setCustomers(updatedCustomers);
+        const updatedCustomer = new Customer(name, email, phone);
+        dispatch(updateCustomer(updatedCustomer));
         navigate('/');
     }
 

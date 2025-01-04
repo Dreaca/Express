@@ -7,7 +7,7 @@ import {setText} from "./reducer/NameSlice.ts";
 function App() {
     const [name,setname] = useState('')
 
-    const printName = useSelector(state => state.name.text)
+    const printName = useSelector(state => state.test.text)
 
     const dispatch = useDispatch()
   return (

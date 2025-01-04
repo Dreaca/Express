@@ -6,7 +6,6 @@ import {AddCustomer} from "./pages/AddCustomer.tsx";
 import {DeleteCustomer} from "./pages/DeleteCustomer.tsx";
 import {UpdateCustomer} from "./pages/UpdateCustomer.tsx";
 import {RootLayout} from "./components/RootLayout.tsx";
-import {CustomerProvider} from "./store/CustomerProvider.tsx";
 
 
 function App() {
@@ -19,9 +18,8 @@ function App() {
   ])
   return (
     <>
-      <CustomerProvider>
           <RouterProvider router={routes}/>
-      </CustomerProvider>
+
     </>
   )
 }

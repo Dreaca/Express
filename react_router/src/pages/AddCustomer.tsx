@@ -1,6 +1,5 @@
 import {useNavigate} from "react-router";
-import {useContext, useState} from "react";
-import {CustomerContext} from "../store/CustomerProvider.tsx";
+import {useState} from "react";
 import {Customer} from "../models/Customer.ts"
 import {Modal} from "../components/Modal";
 import {useDispatch} from "react-redux";

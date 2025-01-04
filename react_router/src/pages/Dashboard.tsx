@@ -1,10 +1,9 @@
-import {useContext} from "react";
 import {Customer} from "../models/Customer.ts";
 import {useSelector} from "react-redux";
 
 export function Dashboard() {
 
-    const [customers,setCustomers] = useSelector(state => state.)
+    const customers = useSelector(state => state.customer.customers)
     return (
         <>
             <h1 className="p-10 text-4xl font-bold mb-6 text-gray-900">Dashboard</h1>
