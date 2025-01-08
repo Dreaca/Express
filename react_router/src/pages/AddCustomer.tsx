@@ -22,7 +22,7 @@ export function AddCustomer() {
 
     return (
         <>
-            <header><h2>Add Customer</h2></header>
+            <header className="flex flex-col items-center mt-5"><h2 className="font-light text-4xl">Add Customer</h2></header>
             <br/>
 
             <Modal handleSubmit={handleSubmit} setName={setName} setEmail={setEmail} setPhone={setPhone} >Add Customer</Modal>

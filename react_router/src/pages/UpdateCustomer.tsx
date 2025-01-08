@@ -23,7 +23,8 @@ export function UpdateCustomer() {
 
     return (
         <>
-            <header><h2>Update Customer</h2></header>
+            <header className="flex flex-col items-center mt-5"><h2 className="font-light text-4xl">Update Customer</h2>
+            </header>
             <br/>
             <Modal handleSubmit={handleSubmit} setName={setName} setEmail={setEmail} setPhone={setPhone}>Update Customer</Modal>
         </>

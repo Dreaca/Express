@@ -24,7 +24,8 @@ export function DeleteCustomer() {
 
     return (
         <>
-            <header><h2>Delete Customer</h2></header>
+            <header className="flex flex-col items-center mt-5"><h2 className="font-light text-4xl">Delete Customer</h2>
+            </header>
             <br/>
             <Modal handleSubmit={handleSubmit} setName={setName} setEmail={setEmail} setPhone={setPhone}>Delete Customer</Modal>
         </>
