@@ -1,8 +1,9 @@
-import http from 'http';
 import fs from 'fs';
 import path from 'path';
+import http from 'http';
 
-const server = http.createServer((req, res) => {
+export default function Routes(req:http.IncomingMessage, res:http.ServerResponse){
+
     const dash: string = path.join(process.cwd(), 'Dashboard.html');
     const adc: string = path.join(process.cwd(), 'AddCustomer.html');
 
@@ -40,6 +41,4 @@ const server = http.createServer((req, res) => {
     } else {
         res.end('404 Not Found');
     }
-});
-
-server.listen(3000)
+}
