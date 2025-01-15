@@ -17,3 +17,32 @@ export async function  addCustomer(customer :Customer){
         console.log('Error adding customer',err)
     }
 }
+export async function deleteCustomer(id:number){
+    try{
+        await prisma.customer.delete({
+            where:{id:id}
+        })
+    }catch (err){
+        console.log("Error occured while deleting customer",err);
+    }
+}
+export async function updateCustomer(id:number, c:Customer){
+    try{
+        await prisma.customer.update({
+            where:{id:id},
+            data:{
+                name: c.name,
+                email: c.email,
+            }
+        })
+    }catch (err){
+        console.log("Error updating customer",err);
+    }
+}
+export async function getAllCustomers(){
+    try {
+        return await prisma.customer.findMany()
+    }catch (err){
+        console.log("Error getting customers",err);
+    }
+}
