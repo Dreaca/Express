@@ -6,6 +6,7 @@ const app:Express = express();
 app.use(express.json());
 
 app.use('/customer',customerRoutes)
+
 app.listen(3000, (err)=>{
     console.log("Server started on port 3000");
 });
