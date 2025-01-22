@@ -3,12 +3,13 @@ import {useState} from "react";
 import {Customer} from "../models/Customer.ts"
 import {Modal} from "../components/Modal";
 import {useDispatch} from "react-redux";
-import {addCustomer} from "../reducer/CustomerSlice.ts";
+import {saveCustomer} from "../reducer/CustomerSlice.ts";
+import {AppDispatch} from "../store/Store.ts";
 
 export function AddCustomer() {
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ export function AddCustomer() {
 
     function handleSubmit() {
         const newCustomer = new Customer(name, email, phone);
-        dispatch(addCustomer(newCustomer));
+        dispatch(saveCustomer(newCustomer));
         navigate('/');
     }
 
